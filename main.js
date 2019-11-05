@@ -18,3 +18,5 @@ app.intent('movie', (conv) => {
 conv.close('タイタニック');
 });
 
+server.listen(process.env.PORT || 3000);  //3000番ポートで待ち受け
+
