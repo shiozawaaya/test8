@@ -1,30 +1,22 @@
-const API_KEY = 'YOUR_API_KEY_HERE';
-module.exports = API_KEY;
-const express = require('express');
+ï»¿const express = require('express');
 const bodyParser = require('body-parser');
-const http = require('http');
-const API_KEY = require('./apiKey');
 
-//‰Šú‰»
-'use strict';
+const app = express();
 
-const {dialogflow} = require('actions-on-google');
-const functions = require('firebase-functions');
+// urlencodedã¨jsonã¯åˆ¥ã€…ã«åˆæœŸåŒ–ã™ã‚‹
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 
-const app = dialogflow({debug: true});
+app.listen(process.env.PORT || 3000);
+console.log('Server is online.');
 
-app.intent('Default Welcome Intent', (conv) => {
-  // Do things
-});
-exports.yourAction = functions.https.onRequest(app);
+app.post('/', function(req, res) {
+    // ãƒªã‚¯ã‚¨ã‚¹ãƒˆãƒœãƒ‡ã‚£ã‚’å‡ºåŠ›
+    console.log(req.body);
+    // ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿åã€nameã‚’å‡ºåŠ›
+    console.log(req.body.name);
 
-//•Ô“š
-const app = dialogflow();
-app.intent('wether', (conv, {place}) => {
-conv.close(`‚«‚Á‚Æ°‚ê‚Ü‚·B`);
-});
-
-
-server.listen((process.env.PORT || 3000), () => {
-    console.log("Server is up and running...");
-});
+    res.send('POST request to the homepage');
+})
