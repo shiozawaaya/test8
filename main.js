@@ -18,5 +18,7 @@ app.post('/', function(req, res) {
     // パラメータ名、nameを出力
     console.log(req.body.name);
 
-    res.send('POST request to the homepage');
+    res.send(JSON.stringify({
+        'speech': '予約を承りました。',
+        'displayText': '予約を承りました。'}));
 })
