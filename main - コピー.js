@@ -1,29 +1,23 @@
-﻿'use strict';
+﻿const express = require('express');
+const bodyParser = require('body-parser');
 
-// Actions client library debugging を有効化
-process.env.DEBUG = 'actions-on-google:*';
+const app = express();
 
-let Assistant = require('actions-on-google');
-let express = require('express');
-let bodyParser = require('body-parser');
+// urlencodedとjsonは別々に初期化する
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 
-let app = express();
-app.set('port', (process.env.PORT || 3000));
-app.use(bodyParser.json({type: 'application/json'}));
+app.listen(process.env.PORT || 3000);
+console.log('Server is online.');
 
-const GENERATE_ANSWER_ACTION = 'generate_answer';
-const CHECK_GUESS_ACTION = 'check_guess';
+app.post('/', function(req, res) {
+    // リクエストボディを出力
+    console.log(req.body);
+    // パラメータ名、nameを出力
+    console.log(req.body.name);
 
-app.post('/', function (request, response) {
-  console.log('headers: ' + JSON.stringify(request.headers));
-  console.log('body: ' + JSON.stringify(request.body));
-
-  const assistant = new Assistant({request: request, response: response});
-  response.sendStatus(200); // OK
-});
-
-// サーバを開始
-var server = app.listen(app.get('port'), function () {
-  console.log('App listening on port %s', server.address().port);
-  console.log('Press Ctrl+C to quit.');
-});
+    res.send(JSON.stringify({
+        "fulfillmentText": "This is a text response"}));
+})

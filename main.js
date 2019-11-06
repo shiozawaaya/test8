@@ -19,5 +19,16 @@ app.post('/', function(req, res) {
     console.log(req.body.name);
 
     res.send(JSON.stringify({
-        "fulfillmentText": "This is a text response"}));
+  "fulfillmentText": "Text response",
+  "fulfillmentMessages": [
+    {
+      "text": {
+        "text": ["Text response"]
+      }
+    }
+  ],
+  "source": "<Text response>"
+}));
 })
+
+
