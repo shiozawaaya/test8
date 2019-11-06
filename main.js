@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.listen(process.env.PORT || 3000);
 console.log('Server is online.');
 
-app.post('/', function(req, res) {
+app.post('/webhook/', function(req, res) {
     // リクエストボディを出力
     console.log(req.body);
     // パラメータ名、nameを出力
