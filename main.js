@@ -19,6 +19,5 @@ app.post('/', function(req, res) {
     console.log(req.body.name);
 
     res.send(JSON.stringify({
-        'speech': '予約を承りました。',
-        'displayText': '予約を承りました。'}));
+        "fulfillmentText": "This is a text response"}));
 })
