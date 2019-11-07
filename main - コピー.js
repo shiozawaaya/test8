@@ -12,6 +12,9 @@ app.use(bodyParser.json());
 app.listen(process.env.PORT || 3000);
 console.log('Server is online.');
 
+// ルート（http://localhost/）にアクセスしてきたときに「Hello」を返す
+app.get('/', (req, res) => res.send('Hello'));
+
 app.post('/webhook/', function(req, res) {
     // リクエストボディを出力
     console.log(req.body);

@@ -22,7 +22,7 @@ app.post('/webhook/', function(req, res) {
     console.log(req.body.name);
 
     res.send(JSON.stringify({
-  "fulfillmentText": "Text response",
+  "fulfillmentText": "多分晴れるでしょう",
   "fulfillmentMessages": [
     {
       "text": {
