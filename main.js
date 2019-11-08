@@ -24,9 +24,10 @@ app.post('/webhook/', function(req, res) {
     console.log(req.body);
 
 	var bodyyy = req.body;
-	var pdate = bodyyy.date;
+	var pdate = bodyyy.queryResult.parameters.date;
+	console.log(pdate);
 
-	if(pdate == '2019-11-11T12:00:00+09:00'){
+	if(pdate == '2019-11-10T12:00:00+09:00'){
 			var resp = '着付けだよ'
 	}else if(pdate == '2019-11-13T12:00:00+09:00'){
 			var resp = '宅急便受け取りだよ'
