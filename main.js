@@ -31,12 +31,14 @@ app.post('/webhook/', function(req, res) {
 			var resp = '着付けだよ'
 	}else if(pdate == '2019-11-13T12:00:00+09:00'){
 			var resp = '宅急便受け取りだよ'
+	}else if(pdate == '2019-11-14T12:00:00+09:00'){
+			var resp = 'しゅんくんと夕飯だよ'
 	}else if(pdate == '2019-11-15T12:00:00+09:00'){
 			var resp = 'サークルの飲み会だよ'
 	}else if(pdate == '2019-11-16T12:00:00+09:00'){
-			var resp = 'ネイルだよ'
+			var resp = 'ネイル＆コルギだよ'
 	}else if(pdate == '2019-11-17T12:00:00+09:00'){
-			var resp = '岡ちゃんとごはんだよ'
+			var resp = '岡ちゃんとご飯だよ'
 	}else if(pdate == '2019-11-20T12:00:00+09:00'){
 			var resp = '部署の人と懇親会だよ'
 	}else if(pdate == '2019-11-23T12:00:00+09:00'){
@@ -47,6 +49,16 @@ app.post('/webhook/', function(req, res) {
 			var resp = 'サークル＆会社の人と飲み会だよ'
 	}else if(pdate == '2019-11-29T12:00:00+09:00'){
 			var resp = '会社の人と飲み会だよ'
+	}else if(pdate == '2019-11-30T12:00:00+09:00'){
+			var resp = 'かおりんとアメフト見に行くよ'
+	}else if(pdate == '2019-12-1T12:00:00+09:00'){
+			var resp = '法事だよ'
+	}else if(pdate == '2019-12-4T12:00:00+09:00'){
+			var resp = '人間ドックだよ'
+	}else if(pdate == '2019-12-7T12:00:00+09:00'){
+			var resp = 'サークルの飲み会だよ'
+	}else if(pdate == '2019-12-8T12:00:00+09:00'){
+			var resp = '母と夕飯だよ'
 	}else{
 			var resp = '特にないよ'
 	}
