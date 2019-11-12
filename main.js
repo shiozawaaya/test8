@@ -51,16 +51,16 @@ app.post('/webhook/', function(req, res) {
 			var resp = '会社の人と飲み会だよ'
 	}else if(pdate == '2019-11-30T12:00:00+09:00'){
 			var resp = 'かおりんとアメフト見に行くよ'
-	}else if(pdate == '2019-12-1T12:00:00+09:00'){
+	}else if(pdate == '2019-12-01T12:00:00+09:00'){
 			var resp = '法事だよ'
-	}else if(pdate == '2019-12-4T12:00:00+09:00'){
+	}else if(pdate == '2019-12-04T12:00:00+09:00'){
 			var resp = '人間ドックだよ'
-	}else if(pdate == '2019-12-7T12:00:00+09:00'){
+	}else if(pdate == '2019-12-07T12:00:00+09:00'){
 			var resp = 'サークルの飲み会だよ'
-	}else if(pdate == '2019-12-8T12:00:00+09:00'){
+	}else if(pdate == '2019-12-08T12:00:00+09:00'){
 			var resp = '母と夕飯だよ'
 	}else{
-			var resp = '特にないよ'
+			var resp = '特にないよ！一緒に遊ぶ？'
 	}
 
 		res.send(JSON.stringify({
